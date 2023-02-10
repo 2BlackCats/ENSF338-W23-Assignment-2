@@ -2,8 +2,9 @@ import time
 import sys
 import json
 import matplotlib.pyplot as plt
+import math
 
-sys.setrecursionlimit(20000)
+sys.setrecursionlimit(10**6)
 def func1(arr, low, high):
     if low < high:
         pi = func2(arr, low, high)
@@ -28,15 +29,18 @@ def func2(array, start, end):
 file=open("ex2.json")
 ex2=json.load(file)
 
+
 funcTime=[]
 for i in ex2:
     start= time.time()
     func1(i, 0, len(i)-1)
+    print("f")
     end=time.time()
     funcTime.append(end-start)
-label=[i for i in range(len(ex2))]
 
-plt.scatter(label, funcTime, c="b", label="Sorting algorithom", alpha=0.5)
+print("OUT")
+
+plt.scatter([0,1,2,3,4], funcTime)
 plt.legend()
 plt.xlabel("Array #")
 plt.ylabel("Time (s)")
