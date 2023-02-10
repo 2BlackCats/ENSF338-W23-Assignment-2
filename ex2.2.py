@@ -39,8 +39,8 @@ for i in ex2:
     funcTime.append(end-start)
 
 print("OUT")
-
-plt.scatter([0,1,2,3,4], funcTime)
+print(funcTime)
+plt.scatter([0,1,2], funcTime)
 plt.legend()
 plt.xlabel("Array #")
 plt.ylabel("Time (s)")
